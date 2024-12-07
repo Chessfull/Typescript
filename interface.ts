@@ -10,11 +10,13 @@ interface Vehicle {
 }
 
 class Car implements Vehicle {
+  constructor(private location: Point, private firm: String) {}
+
   currentLocation: Point;
-  locationMethod(point: Point): void {
-    console.log("locationMethod worked");
+  locationMethod(): void {
+    console.log(`Location - X: ${this.location.x }, Y: ${this.location.y}, Firm: ${this.firm}`);
   }
 }
 
-let car : Car = new Car();
-car.locationMethod({x:1,y:2});
+let car: Car = new Car({ x: 1, y: 2 },"MertCar");
+car.locationMethod();
